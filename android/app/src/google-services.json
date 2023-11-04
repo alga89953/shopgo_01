@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "658853456442",
+    "firebase_url": "https://shopgo-2dfc6-default-rtdb.firebaseio.com",
+    "project_id": "shopgo-2dfc6",
+    "storage_bucket": "shopgo-2dfc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658853456442:android:84172fe1646fddc262e303",
+        "android_client_info": {
+          "package_name": "com.example.login_google"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658853456442-e9cd1lf1rcusubfcj09o4o9j82m0mc21.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login_google",
+            "certificate_hash": "d37a744209447edd951c4c8fad214ee63b3b1a16"
+          }
+        },
+        {
+          "client_id": "658853456442-kfl922nfu47oebgidaik5mkagcjjetsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaE4FZGfOLmDLAR2GNMMhaFEgR6tBfVRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658853456442-kfl922nfu47oebgidaik5mkagcjjetsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658853456442:android:d0c6cf7424da142162e303",
+        "android_client_info": {
+          "package_name": "com.example.shopgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658853456442-lhq7jjdh37pbkis24kr093cmfvfc07j3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shopgo",
+            "certificate_hash": "07577b5aa0588769f14b48e1f0f2a53412ede647"
+          }
+        },
+        {
+          "client_id": "658853456442-kfl922nfu47oebgidaik5mkagcjjetsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaE4FZGfOLmDLAR2GNMMhaFEgR6tBfVRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658853456442-kfl922nfu47oebgidaik5mkagcjjetsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
