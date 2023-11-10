@@ -76,7 +76,6 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    //color: Color(0x013004),
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -92,6 +91,21 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  _resetPassword();
+                },
+                child: Text(
+                  "Olvidaste tu contraseña?",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -149,6 +163,18 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushNamed(context, "/home");
     } else {
       showToast(message: "Se produjo algún error");
+    }
+  }
+
+  void _resetPassword() async {
+    String email = _emailController.text;
+
+    try {
+      await _auth.resetPassword(email);
+      showToast(
+          message: "Se ha enviado un correo para restablecer la contraseña");
+    } catch (e) {
+      showToast(message: "Error al intentar restablecer la contraseña");
     }
   }
 }
