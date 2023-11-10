@@ -16,15 +16,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          //Es el encabezado
           automaticallyImplyLeading: false,
           title: Text("HomePage"),
+          backgroundColor: const Color.fromARGB(255, 28, 75, 30),
         ),
+        backgroundColor: const Color.fromARGB(255, 28, 75, 30),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
                 child: Text(
-              "Welcome Home buddy!",
+              "Bienvenido a ShopGo!",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
             )),
             SizedBox(

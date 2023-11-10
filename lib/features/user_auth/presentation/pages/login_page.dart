@@ -29,10 +29,13 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      //Es elencabezado
+      /*appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("Login"),
-      ),
+        title: Text("ShopGo"),
+        backgroundColor: Colors.green,
+      )*/
+      backgroundColor: const Color.fromARGB(255, 28, 75, 30),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -40,8 +43,11 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Login",
-                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+                "Iniciar sesión",
+                style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               SizedBox(
                 height: 30,
@@ -70,18 +76,19 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    //color: Color(0x013004),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                     child: _isSigning
                         ? CircularProgressIndicator(
-                            color: Colors.white,
+                            color: Colors.blue,
                           )
                         : Text(
-                            "Login",
+                            "Iniciar sesión",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -94,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
+                  Text("No tienes una cuenta?"),
                   SizedBox(
                     width: 5,
                   ),
@@ -107,9 +114,9 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                     child: Text(
-                      "Sign Up",
+                      "Resgistrate",
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -138,10 +145,10 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     if (user != null) {
-      showToast(message: "User is successfully signed in");
+      showToast(message: "El usuario ha iniciado sesión correctamente");
       Navigator.pushNamed(context, "/home");
     } else {
-      showToast(message: "some error occured");
+      showToast(message: "Se produjo algún error");
     }
   }
 }

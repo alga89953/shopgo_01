@@ -40,6 +40,7 @@ dependencies:
   firebase_auth: ^4.6.3
   firebase_storage: ^11.2.4
   fluttertoast: ^8.2.2
+  flare_flutter: ^3.0.2
 
 dev_dependencies:
   flutter_test:

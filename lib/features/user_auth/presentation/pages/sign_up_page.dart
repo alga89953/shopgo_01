@@ -32,10 +32,12 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      //Es el encabezado
+      /*appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text("SignUp"),
-      ),
+        title: Text("Registrar"),
+      ),*/
+      backgroundColor: const Color.fromARGB(255, 28, 75, 30),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -43,15 +45,18 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Sign Up",
-                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+                "Registrarse",
+                style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
               SizedBox(
                 height: 30,
               ),
               FormContainerWidget(
                 controller: _usernameController,
-                hintText: "Username",
+                hintText: "Nombre",
                 isPasswordField: false,
               ),
               SizedBox(
@@ -59,7 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               FormContainerWidget(
                 controller: _emailController,
-                hintText: "Email",
+                hintText: "Correo",
                 isPasswordField: false,
               ),
               SizedBox(
@@ -67,7 +72,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               FormContainerWidget(
                 controller: _passwordController,
-                hintText: "Password",
+                hintText: "Contraseña",
                 isPasswordField: true,
               ),
               SizedBox(
@@ -81,18 +86,18 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
                       child: isSigningUp
                           ? CircularProgressIndicator(
-                              color: Colors.white,
+                              color: Colors.blue,
                             )
                           : Text(
-                              "Sign Up",
+                              "Registarse",
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             )),
                 ),
@@ -103,7 +108,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?"),
+                  Text("Ya tienes una cuenta?"),
                   SizedBox(
                     width: 5,
                   ),
@@ -116,9 +121,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             (route) => false);
                       },
                       child: Text(
-                        "Login",
+                        "Iniciar  sesión",
                         style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold),
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ))
                 ],
               )
@@ -144,10 +149,10 @@ class _SignUpPageState extends State<SignUpPage> {
       isSigningUp = false;
     });
     if (user != null) {
-      showToast(message: "User is successfully created");
+      showToast(message: "Se ha creado correctamente");
       Navigator.pushNamed(context, "/home");
     } else {
-      showToast(message: "Some error happend");
+      showToast(message: "A courrido un error");
     }
   }
 }
