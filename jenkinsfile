@@ -1,0 +1,44 @@
+pipeline {
+    agent { label '<agent-label>' }
+    environment {
+        GOOGLE_SERVICES_JSON = credentials('google-services-json') // Aquí debes configurar las credenciales para Firebase
+    }
+    stages {
+        stage('Fetch') { 
+            steps {
+                sh "${env.SOURCE}; dart pub get" 
+            }
+        } 
+        stage('Build') {
+            steps {
+                sh "${env.SOURCE}; dart run lib/main.dart"
+            }
+        }
+        stage('Lint') {
+            steps {
+                sh "${env.SOURCE}; dart analyze"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh "${env.SOURCE}; flutter test"
+            }
+        }
+        stage('Firebase Setup') {
+            steps {
+                // Aquí se configura Firebase con las credenciales
+                sh """
+                    echo '$GOOGLE_SERVICES_JSON' > google-services.json
+                    flutter pub get
+                    flutter pub run firebase_core:write-initialization-settings --auto
+                    flutter pub run firebase_auth:firebase_auth
+                """
+            }
+        }
+        stage('Clean') {
+            steps {
+                cleanWs deleteDirs: true, notFailBuild: true            
+            }
+        } 
+    }
+}
